@@ -20,12 +20,8 @@ void insertarNodo(Nodo *&,int,Nodo *);
 void mostrarArbol(Nodo *,int);
 Nodo *arbol = NULL;
 
-
-
-int main() {
-	
+int main() {	
 	menu();
-
 }
 
 void menu(){
@@ -48,7 +44,7 @@ int dato, opcion, contador=0;
 					system("pause");
 					break;
 			case 2: cout<<"\nLista de nodos:\n\n";
-					cin>>dato;
+					//cin>>dato;
 					mostrarArbol(arbol,contador);			
 					system("pause");
 					break;
@@ -62,7 +58,6 @@ int dato, opcion, contador=0;
 //Funcion para crear un nuevo nodo
 Nodo *crearNodo(int n,Nodo *padre){
 	Nodo *nuevo_nodo = new Nodo();
-	
 	nuevo_nodo->dato = n;
 	nuevo_nodo->der = NULL;
 	nuevo_nodo->izq = NULL;
@@ -94,7 +89,7 @@ void mostrarArbol(Nodo *arbol,int cont){
 		return;
 	}
 	else{
-		mostrarArbol(arbol->der,cont+1);
+		mostrarArbol(arbol->der, cont+1);
 		cout<<"Valor del nodo: "<<arbol->dato<<endl;
 		mostrarArbol(arbol->izq,cont+1);
 	}
